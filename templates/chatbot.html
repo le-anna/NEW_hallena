@@ -1,0 +1,55 @@
+
+
+<!DOCTYPE html>
+<html >
+  <head>
+    <meta charset="UTF-8">
+    <title>ML API</title>
+    <link href='https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="../static/style.css">
+    
+  </head>
+  <nav id='nav' class='flex'>
+    <div id='nav-container' class='flex'>
+        <div id='hallena'>
+            <a href='/' id='hallena-link'>
+                HALLENA
+            </a>
+        </div>
+        <div id='nav-links' class='flex row'>
+            <a href='/chatbot' class='nav-link'>
+                CHATBOT
+            </a>
+            <a href='/' class='nav-link'>
+                CONTACT
+            </a>
+            <!-- <a href='/about' class='nav-link'>
+                ABOUT
+            </a> -->
+        </div>
+    </div>
+</nav>
+  <body>
+  <div id="chatbot" class="flex center column">
+    <h1>CHATBOT</h1>
+    <div id="chatbot-background" class="flex column center">
+      <div id="wrapper" class="flex column">
+        <div id="chatbot-interface" class="flex column">
+          <p>
+            {{ user_text }}
+            <br/>
+            {{ prediction_text }}
+          </p>
+        </div>
+        <div id="chatbot-user-input">
+          <form id="chat" action="{{ url_for("predict")}}" method="post" class="flex">
+            <input id="user-input" type="text" name="sentence" />
+            <button type="submit" form="chat">Chat</button>
+          </form>
+        </div>
+      </div>
+
+    </div>
+  </div>
+  </body>
+</html>
